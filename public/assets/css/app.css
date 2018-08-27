@@ -1,0 +1,402 @@
+.cs-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.modal-body{
+  overflow : hidden;
+}
+
+.cs-loader-inner {
+  transform: translateY(-50%);
+  top: 50%;
+  position: absolute;
+  width: calc(100% - 200px);
+  color: black;
+  padding: 0 100px;
+  text-align: center;
+  margin: auto;
+}
+
+.cs-loader-inner label {
+  font-size: 20px;
+  opacity: 0;
+  display:inline-block;
+}
+
+@keyframes lol {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  33% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  66% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+}
+
+@-webkit-keyframes lol {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-300px);
+  }
+  33% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+  }
+  66% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(300px);
+  }
+}
+
+.cs-loader-inner label:nth-child(6) {
+  -webkit-animation: lol 3s infinite ease-in-out;
+  animation: lol 3s infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(5) {
+  -webkit-animation: lol 3s 100ms infinite ease-in-out;
+  animation: lol 3s 100ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(4) {
+  -webkit-animation: lol 3s 200ms infinite ease-in-out;
+  animation: lol 3s 200ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(3) {
+  -webkit-animation: lol 3s 300ms infinite ease-in-out;
+  animation: lol 3s 300ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(2) {
+  -webkit-animation: lol 3s 400ms infinite ease-in-out;
+  animation: lol 3s 400ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(1) {
+  -webkit-animation: lol 3s 500ms infinite ease-in-out;
+  animation: lol 3s 500ms infinite ease-in-out;
+}
+
+
+body
+{
+    background: url('/img/cover.jpg') fixed;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+.wrap
+{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99; 
+}
+
+p.form-title
+{
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 32px;
+    font-weight: bolder;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 5%;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+form
+{
+    width: 450px;
+    margin: 0 auto;
+    height : 300px;
+    padding : 30px 20px;
+}
+
+form.login input[type="text"], form.login input[type="password"], form.login input[type="email"]
+{
+    width: 100%;
+    margin: 0;
+    padding: 10px 30px;
+    background: 0;
+    border: 0px;
+    border-bottom: 1px solid #FFFFFF;
+    outline: 0;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: white;
+    outline: 0;
+}
+
+form.login input[type="submit"]
+{
+    width: 100%;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 25px;
+    outline: 0;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+form.login input[type="submit"]:hover
+{
+    transition: background-color 0.5s ease;
+}
+
+form.login .remember-forgot
+{
+    float: left;
+    width: 100%;
+    margin: 10px 0 0 0;
+}
+form.login .forgot-pass-content
+{
+    min-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+form.login label, form.login a
+{
+    font-size: 12px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+form.login a
+{
+    transition: color 0.5s ease;
+}
+
+form.login a:hover
+{
+    color: #2ecc71;
+}
+
+.pr-wrap
+{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+}
+
+.show-pass-reset
+{
+    display: block !important;
+}
+
+.pass-reset
+{
+    margin: 0 auto;
+    width: 250px;
+    position: relative;
+    margin-top: 22%;
+    z-index: 999;
+    background: #FFFFFF;
+    padding: 20px 15px;
+}
+
+.forgot-pass{
+  cursor : pointer;
+}
+
+.pass-reset label
+{
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.pass-reset input[type="email"]
+{
+    width: 100%;
+    margin: 5px 0 0 0;
+    padding: 5px 10px;
+    background: 0;
+    border: 0;
+    border-bottom: 1px solid #000000;
+    outline: 0;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #000000;
+    outline: 0;
+}
+
+.pass-reset input[type="submit"]
+{
+    width: 100%;
+    border: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 10px;
+    outline: 0;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.pass-reset input[type="submit"]:hover
+{
+    transition: background-color 0.5s ease;
+}
+
+.panel-body{
+  min-height : 300px;
+}
+
+
+
+#media-body{
+  background-image: url('../../img/mediabuttons/bg.png');
+  min-height : 500px;
+  padding: 0px;
+  /*border:none*/
+}
+
+.artist{
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+.title {
+  color : white;
+  font-weight: bold;
+}
+
+#audio-img {
+  height : 180px;
+  /*background-color: #f3f3f3;*/
+ /* margin-bottom: 20px;*/
+}
+
+#media-body {
+  
+}
+
+.cover {
+  width : 96%;
+  margin: 2% 2%;
+}
+
+#audio-info {
+  height : 100px;
+  padding: 10px;
+
+  /*margin-top: 50px;*/
+}
+
+#audio-buttons{
+  margin-top: 20px;
+}
+
+a {
+  cursor : pointer;
+}
+
+
+#main_title{
+  height : 150px;
+ /* font-size: 35px;*/
+}
+
+.main_image_style{
+  width: 100%;
+}
+
+.playlist-body{
+  margin-top: 20px;
+}
+
+#main-media-box {
+  margin-top: 30px;
+  border: none;
+ /* border: 1px solid white;*/
+  /*border-radius: 15px 15px 5px 5px;*/
+}
+
+
+.movie_name {
+  font-variant: small-caps;
+}
+
+#movie_name{
+  font-weight: bolder;
+  font-family: serif;
+  font-size: 38px;
+}
+#producer_name{
+  font-size : 20px;
+}
+
+.panel_heading{
+  padding : 5px ;
+}
+
+
+#movie_block{
+  width : 230px;
+  height: 250px;
+  border: 1px solid white;
+  border-radius: 15px;
+  background-color: transparent;
+  margin-right: 50px;
+  overflow: hidden;
+  padding: 0px;
+}
+
+#maincoverimg{
+  height: 200px;
+
+}
+
+.caption{
+  padding : 0px;
+}
+
+.volume {
+  width : 80%;
+  margin: 0 10%; 
+}
+
+#duration{
+    color : white;
+    width : 10%;
+    text-align: center;
+    margin: inherit;
+}

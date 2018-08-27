@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <base href="/" >
+        <title>My Mean App</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/app.css">
+
+
+
+        <script src="assets/js/jquery-3.2.1.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        
+        <script src="assets/js/angular.min.js"></script>
+        <script src="assets/js/route.min.js"></script>
+
+        <script src="app/script.js"></script>
+        <script src="app/routes.js"></script>
+
+        <script src="app/services/authservice.js"></script>
+
+        <script src="app/controllers/usersCtrl.js"></script>
+        <script src="app/controllers/mainCtrl.js"></script>
+        <script src="app/controllers/managementCtrl.js"></script>
+
+        <script src="assets/js/main.js"></script>
+    </head>
+
+    <body ng-app="myApp" ng-controller="mainCtrl">
+
+        <div class="container-fluid">
+            <div ng-view></div>
+        </div>
+
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-md">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" ng-click="endSession()" data-dismiss="modal">&times;</button>
+                  <h2 class="modal-title text-center">{{modalHeader}}</h2>
+                </div>
+                <div class="modal-body text-center" >
+                  <p>{{modalInfo}}</p>
+                  <br>
+                  <br>
+                    <div class="cs-loader text-center">
+                      <div class="cs-loader-inner">
+                        <label> ● </label>
+                        <label> ● </label>
+                        <label> ● </label>
+                        <label> ● </label>
+                        <label> ● </label>
+                        <label> ● </label>
+                      </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <div class="text-center"> 
+                    {{modalFooter}}
+                </div>
+                <button ng-hide="button" type="button" ng-click="renewSession()" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                <button ng-hide="button" type="button" ng-click="endSession()" class="btn btn-danger" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+    </body>
+</html>

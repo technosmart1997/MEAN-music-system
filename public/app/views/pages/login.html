@@ -1,0 +1,43 @@
+ <p><br></p>
+<p><br></p>
+
+ <div class="container text-center">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="wrap">
+                <p class="form-title"><i class="fa fa-user"> </i>&nbsp;Sign In</p>
+                <form class="login" name="loginForm" ng-submit="authenticate(loginData)">
+                <input type="text"  ng-model="loginData.username" placeholder="Username" required/>
+                <input type="password" ng-model="loginData.password" placeholder="Password" required />
+                <input type="submit" ng-disabled="loginForm.$invalid" value="Sign In" class="btn btn-success btn-sm" />
+                    <div class="remember-forgot">
+                        <div class="row">
+                            <div class="col-md-8 forgot-pass-content">
+                                <span style="color:white">Not a Member?</span><a  href="/register" class="forgot-pass"> Register Here</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                  
+    
+
+            <div class="row" ng-if="loginsuccessMsg">
+            <div class="col-md-6">
+                <div class="alert alert-success"><i class="fa fa-check fa-2x"></i>&nbsp;{{loginsuccessMsg}}</div>
+                </div>
+            </div>    
+
+
+            <div class="row" ng-if="loginerrorMsg">
+                 <div class="col-md-6">
+                    <div class="alert alert-danger"><i class="fa fa-exclamation-triangle fa-2x"></i>&nbsp;{{loginerrorMsg}}</div>
+                </div>
+            </div>  
+            </div>  
+
+        </div>
+    </div>
+
+</div>
+

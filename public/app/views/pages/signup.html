@@ -1,0 +1,100 @@
+<head>
+    <style>
+    input.ng-valid.ng-touched{
+        border: 2px solid green;
+    }
+
+    input.ng-invalid.ng-touched {
+        border: 2px solid red;
+     }
+
+     .success{
+        color : green;
+        margin : 5px 20px;
+     }
+
+     .error{
+        color : red;
+        margin : 5px 20px;
+     }
+    </style>
+</head>
+
+<body>
+     <p><br></p>
+    <p><br></p>
+
+
+ <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="wrap">
+                <p class="form-title"> Sign Up</p>
+                <form class="login" name="regForm" ng-submit="register(regData)" novalidate>
+                
+                    <input type="text" ng-model="regData.reg_username" name="username" class="form-control" placeholder="Username" ng-maxlength="20" ng-minlength="3" ng-pattern="/^(([a-z]{3,20})+[ ]([a-z]{3,20})+)+$/" 
+                    ng-blur="checkusername(regData)" required>
+
+                    <span ng-if="usernameMsg && !regForm.username.$error.required" ng-class="{'success': msgsuccess ,'error' : msgerror} ">{{usernameMsg}}</span>
+
+                    <span  style="color:red;padding:10px 20px" ng-show="(!regForm.username.$pristine && regForm.username.$error.required) || (regForm.username.$touched && regForm.username.$error.required)">username is required *</span>
+                    <span style="color:red;padding:5px 10px" ng-show="(regForm.username.$error.pattern && regForm.username.$invalid) || (regForm.username.$error.maxlength && !regForm.username.$pristine) || (regForm.username.$error.minlength && !regForm.username.$pristine)">
+                        <ul>
+                            <li>Must have a space between first and last name.</li>
+                            <li>Must not contain any special character.</li>
+                            <li>Must not contain any number.</li>
+                            <li>Must be in lowercase.</li>
+                            <li>Must have at least min 6 and max 20 charaters.</li>
+                        </ul>
+                    </span>
+         
+                    <input type="email" name="email" ng-blur="checkemail(regData)" ng-model="regData.reg_email" class="form-control" placeholder="Email"
+                 required>
+
+                     <span ng-if="emailMsg && !regForm.email.$error.required" ng-class="{'success': emailsuccess ,'error' : emailerror} ">{{emailMsg}}</span>
+
+                    <span style="color:red;padding:10px 20px" ng-show="(!regForm.email.$pristine && regForm.email.$error.required) || (regForm.email.$touched && regForm.email.$error.required)"> Please enter proper email address!! *</span>
+           
+                    <input type="password" name="password" ng-model="regData.reg_password" class="form-control" placeholder="Password" ng-minlength="8" ng-maxlength="25" ng-pattern="/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[\d])(?=.*?[\W]).{8,25}$/" required>
+
+                    <span style="color:red;padding:10px 20px" ng-show="(!regForm.password.$pristine && regForm.password.$error.required) || (regForm.password.$touched && regForm.password.$error.required)">password is mandatory *</span>
+                    <span style="color:red;padding:5px 10px" class="help-block" ng-show="(regForm.password.$error.pattern && regForm.password.$invalid) || (regForm.password.$error.maxlength && !regForm.password.$pristine) || (regForm.password.$error.minlength && !regForm.password.$pristine)">
+                        <ul>
+                            <li>Must contain at least one uppercase character.</li>
+                            <li>Must contain at least one lower case character.</li>
+                            <li>Must contain at least one number.</li>
+                            <li>Must contain one special character</li>
+                            <li>Must have at least 8 and max 25 charaters.</li>
+                        </ul>
+                        
+                    </span>
+           
+                    <input type="submit" class="btn  btn-success" value="Sign Up" ng-disabled="regForm.$invalid"/>
+                   
+                    <div class="remember-forgot">
+                        <div class="row">
+                            <div class="col-md-8 forgot-pass-content">
+                                <span style="color:white">Already a member?</span><a  href="/login" class="forgot-pass"> Sign In Here</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="row" ng-if="successMsg">
+        <div class="col-md-6">
+            <div class="alert alert-success"><i class="fa fa-check fa-2x"></i>&nbsp;{{successMsg}}</div>
+        </div>
+    </div>    
+
+
+    <div class="row" ng-if="errorMsg">
+         <div class="col-md-6">
+            <div class="alert alert-danger"><i class="fa fa-exclamation-triangle fa-2x"></i>&nbsp;{{errorMsg}}</div>
+        </div>
+    </div>    
+</body>

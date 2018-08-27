@@ -1,0 +1,94 @@
+<p><br></p>
+
+<div class="container-fluid">
+<div class="row">
+	<div class="col-md-1"></div>
+	<div class="col-md-6">
+		<div class="panel panel-primary">
+			<div class="panel-heading panel_heading">
+				<h2 class="text-center movie_name">{{movie_name}}-({{year}})</h2>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-7 text-center" id="main_title">
+						<h2 id="movie_name" style="font-variant: small-caps;">{{movie_name}}</h2>
+						<h3 id="producer_name" style="font-variant: small-caps;">Director - {{producer}}</h3>
+					</div>
+					<div class="col-md-5" id="main_image">
+						<img class="main_image_style thumbnail" src="img/mediabuttons/covers/{{img}}.jpg" />
+					</div>
+				</div>
+				 <div class="playlist-body">
+				 	<table class="table table-hover">
+				 		<thead>
+					      <tr>
+					        <th>S.No</th>
+					        <th>PlayList</th>
+					        <th>Artist</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr ng-repeat="song in songs">
+					        <td>{{song.song_id}}</td>
+					        <td>	
+					        	<a  ng-click="songplay(song.song_id,movie);">
+					        		{{song.song_title}} 
+					        	</a>
+					    	</td>
+					        <td><strong>{{song.artist}}</strong></td>
+					      </tr>
+					    </tbody>
+				 	</table>
+				 </div>   	
+				 
+			</div>
+			<div class="panel-footer">
+				<button class="btn btn-primary" ng-click="back()">Back To Movies</button>
+			</div>
+		</div>
+	</div>
+
+		<div class="col-md-1"></div>
+			<div class="col-md-3" >
+				<div class="panel panel-primary" id="main-media-box">
+					<div class="panel-body" id="media-body">
+						<div id="container">
+							<div id="audio-img">
+								<img class="cover" src="img/mediabuttons/covers/{{img}}.jpg"/>
+							</div>
+
+							<div id="audio-player">
+								<div id="audio-info" class="text-center">
+									<span class="title"><h3>{{title}}</h3></span>
+									<span class="artist"><h5>Artist - {{artist}}</h5></span>
+									<br>
+								</div>
+
+								<br>
+								<div id="audio-buttons" class="text-center">
+										<button id="prev"><i class="fa fa-arrow-left fa-3x"></i></button>
+										<button id="play"><i class="fa fa-play fa-3x"></i></button>
+										<button id="stop"><i class="fa fa-stop-circle fa-3x"></i></button>
+										<button id="pause"><i class="fa fa-pause-circle fa-3x"></i></button>
+										<button id="next"><i class="fa fa-arrow-right fa-3x"></i></button>
+								</div>
+										<div class="clearfix"></div>
+										<br>
+										<br>
+									<div class="volume">
+										<input type="range" ng-change="setvolume(cur_volume)" ng-model="cur_volume" min="0" max="10"/>	
+									</div>	
+                                <br>
+                                <div id="duration">
+								
+								</div>	
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div> 
+			<div class="col-md-1"></div>
+	</div>
+</div>
+	
+  

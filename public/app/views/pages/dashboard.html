@@ -1,0 +1,32 @@
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">Welcome,&nbsp;{{username}}</a>
+	    </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/dashboard">Home</a></li>
+            <li><a href="/management">Management</a></li>
+            <li><a href="#" ng-click="logout()" >Logout</a></li>
+            <li><a href="#">{{email}}</a></li>
+        </ul>
+    </div>
+</div>
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+
+<div class="container">
+  <div class="row">
+     <div class="col-md-3" ng-repeat="movie in movies">
+          <div class="thumbnail">
+            <a href="songs/{{movie.movie_title}}/{{movie.movie_id}}">
+              <img src="img/mediabuttons/covers/{{movie.img}}.jpg" alt="" style="width:100%">
+              <div class="caption text-center">
+                <h4><strong>{{movie.movie_title}}</strong></h4>
+              </div>
+            </a>
+          </div>
+    </div>
+  </div>
+</div>
